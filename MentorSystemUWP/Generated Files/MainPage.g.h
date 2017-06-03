@@ -7,6 +7,27 @@
 //------------------------------------------------------------------------------
 
 
+namespace Windows {
+    namespace UI {
+        namespace Xaml {
+            namespace Controls {
+                ref class StackPanel;
+                ref class TextBlock;
+                ref class TextBox;
+                ref class Button;
+            }
+        }
+    }
+}
+namespace Windows {
+    namespace UI {
+        namespace Xaml {
+            namespace Shapes {
+                ref class Rectangle;
+            }
+        }
+    }
+}
 
 namespace MentorSystemUWP
 {
@@ -23,6 +44,12 @@ namespace MentorSystemUWP
     private:
         bool _contentLoaded;
     
+        private: ::Windows::UI::Xaml::Controls::StackPanel^ contentPanel;
+        private: ::Windows::UI::Xaml::Shapes::Rectangle^ ColoredRectangle;
+        private: ::Windows::UI::Xaml::Controls::StackPanel^ inputPanel;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ greetingOutput;
+        private: ::Windows::UI::Xaml::Controls::TextBox^ nameInput;
+        private: ::Windows::UI::Xaml::Controls::Button^ inputButton;
     };
 }
 

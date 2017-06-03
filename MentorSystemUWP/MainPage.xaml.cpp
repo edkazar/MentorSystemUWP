@@ -21,7 +21,18 @@ using namespace Windows::UI::Xaml::Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
+SolidColorBrush^ redColor;
+
 MainPage::MainPage()
 {
 	InitializeComponent();
+
+	redColor = ref new SolidColorBrush(Windows::UI::Colors::Red);
+}
+
+
+void MentorSystemUWP::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	greetingOutput->Text = "Hello, " + nameInput->Text + "!";
+	ColoredRectangle->Fill = redColor;
 }
