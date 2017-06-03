@@ -17,6 +17,6 @@
             </StackPanel>
             <TextBlock x:Name="greetingOutput"/>
         </StackPanel>
-        <Rectangle x:Name="ColoredRectangle" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="188" Margin="59,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="422"/>
+        <Rectangle x:Name="ColoredRectangle" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="188" Margin="59,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="422" DoubleTapped="Rectangle_DoubleTapped" DragEnter="Rectangle_DragEntered"/>
     </Grid>
 </Page>
