@@ -12,6 +12,7 @@ namespace Windows {
         namespace Xaml {
             namespace Controls {
                 ref class StackPanel;
+                ref class GridView;
                 ref class Image;
                 ref class TextBlock;
                 ref class TextBox;
@@ -46,11 +47,20 @@ namespace MentorSystemUWP
         bool _contentLoaded;
     
         private: ::Windows::UI::Xaml::Controls::StackPanel^ contentPanel;
-        private: ::Windows::UI::Xaml::Controls::Image^ image;
-        private: ::Windows::UI::Xaml::Shapes::Rectangle^ ColoredRectangle;
         private: ::Windows::UI::Xaml::Controls::StackPanel^ drawingPanel;
+        private: ::Windows::UI::Xaml::Controls::GridView^ iconPanel;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage9;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage8;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage7;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage6;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage5;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage4;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage3;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage2;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage1;
         private: ::Windows::UI::Xaml::Controls::StackPanel^ inputPanel;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ greetingOutput;
+        private: ::Windows::UI::Xaml::Shapes::Rectangle^ ColoredRectangle;
         private: ::Windows::UI::Xaml::Controls::TextBox^ nameInput;
         private: ::Windows::UI::Xaml::Controls::Button^ inputButton;
     };

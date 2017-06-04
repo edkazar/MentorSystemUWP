@@ -9,16 +9,46 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,0">
         <StackPanel x:Name="contentPanel" Margin="0,0,0,0">
-            <TextBlock HorizontalAlignment="Left" Text="Hello World" FontSize="36"/>
-            <TextBlock Text="What's your name?"/>
+            <TextBlock HorizontalAlignment="Left" Text="Hello World" FontSize="36" FontFamily="Gotham"/>
+            <TextBlock Text="What's your name?" FontFamily="Gotham"/>
             <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
                 <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
-                <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
+                <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click" FontFamily="Gotham"/>
             </StackPanel>
             <TextBlock x:Name="greetingOutput"/>
+            <Rectangle x:Name="ColoredRectangle" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="188" Margin="50,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="1821" DoubleTapped="Rectangle_DoubleTapped" DragEnter="Rectangle_DragEntered"/>
         </StackPanel>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="354" Margin="522,600,0,126" Width="873"/>
-        <Rectangle x:Name="ColoredRectangle" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="188" Margin="50,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="1821" DoubleTapped="Rectangle_DoubleTapped" DragEnter="Rectangle_DragEntered"/>
-        <StackPanel x:Name="drawingPanel" HorizontalAlignment="Left" Height="1065" Margin="0,0,0,0" Width="1910"/>
+        <StackPanel x:Name="drawingPanel" HorizontalAlignment="Left" Height="1080" Margin="0,0,0,0" Width="1920"/>
+        <Border BorderBrush="LightGray" BorderThickness="3" Margin="0,924,0,0">
+            <GridView x:Name="iconPanel" Height="150">
+                <Border BorderBrush="LightGray" BorderThickness="3" Margin="-3,-3">
+                    <Image x:Name="iconPanelImage1" Height="75" Width="75" Source="Assets/bvm_shadow.png" GotFocus="TestFocusing"/>
+                </Border>
+                <Border BorderBrush="LightGray" BorderThickness="3" Margin="-3,-3">
+                    <Image x:Name="iconPanelImage2" Height="75" Width="75" Source="Assets/ettube_shadow.png"/>
+                </Border>
+                <Border BorderBrush="LightGray" BorderThickness="3" Margin="-3,-3">
+                    <Image x:Name="iconPanelImage3" Height="75" Width="75" Source="Assets/hemostat_shadow.png"/>
+                </Border>
+                <Border BorderBrush="LightGray" BorderThickness="3" Margin="-3,-3">
+                    <Image x:Name="iconPanelImage4" Height="75" Width="75" Source="Assets/iodineswab_shadow.png"/>
+                </Border>
+                <Border BorderBrush="LightGray" BorderThickness="3" Margin="-3,-3">
+                    <Image x:Name="iconPanelImage5" Height="75" Width="75" Source="Assets/longhook_shadow.png"/>
+                </Border>
+                <Border BorderBrush="LightGray" BorderThickness="3" Margin="-3,-3">
+                    <Image x:Name="iconPanelImage6" Height="75" Width="75" Source="Assets/retractor_shadow.png"/>
+                </Border>
+                <Border BorderBrush="LightGray" BorderThickness="3" Margin="-3,-3">
+                    <Image x:Name="iconPanelImage7" Height="75" Width="75" Source="Assets/scalpel_shadow.png"/>
+                </Border>
+                <Border BorderBrush="LightGray" BorderThickness="3" Margin="-3,-3">
+                    <Image x:Name="iconPanelImage8" Height="75" Width="75" Source="Assets/scissors_shadow.png"/>
+                </Border>
+                <Border BorderBrush="LightGray" BorderThickness="3" Margin="-3,-3">
+                    <Image x:Name="iconPanelImage9" Height="75" Width="75" Source="Assets/text_palpation_shadow.png"/>
+                </Border>
+            </GridView>
+        </Border>
     </Grid>
 </Page>

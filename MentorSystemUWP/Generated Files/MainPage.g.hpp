@@ -34,10 +34,50 @@ void ::MentorSystemUWP::MainPage::Connect(int __connectionId, ::Platform::Object
             break;
         case 2:
             {
-                this->image = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                this->drawingPanel = safe_cast<::Windows::UI::Xaml::Controls::StackPanel^>(__target);
             }
             break;
         case 3:
+            {
+                this->iconPanel = safe_cast<::Windows::UI::Xaml::Controls::GridView^>(__target);
+            }
+            break;
+        case 4:
+            {
+                this->iconPanelImage5 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+            }
+            break;
+        case 5:
+            {
+                this->iconPanelImage4 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+            }
+            break;
+        case 6:
+            {
+                this->iconPanelImage3 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+            }
+            break;
+        case 7:
+            {
+                this->iconPanelImage2 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+            }
+            break;
+        case 8:
+            {
+                this->iconPanelImage1 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+            }
+            break;
+        case 9:
+            {
+                this->inputPanel = safe_cast<::Windows::UI::Xaml::Controls::StackPanel^>(__target);
+            }
+            break;
+        case 10:
+            {
+                this->greetingOutput = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 11:
             {
                 this->ColoredRectangle = safe_cast<::Windows::UI::Xaml::Shapes::Rectangle^>(__target);
                 (safe_cast<::Windows::UI::Xaml::Shapes::Rectangle^>(this->ColoredRectangle))->DoubleTapped += ref new ::Windows::UI::Xaml::Input::DoubleTappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
@@ -46,27 +86,12 @@ void ::MentorSystemUWP::MainPage::Connect(int __connectionId, ::Platform::Object
                     (::Platform::Object^, ::Windows::UI::Xaml::DragEventArgs^))&MainPage::Rectangle_DragEntered);
             }
             break;
-        case 4:
-            {
-                this->drawingPanel = safe_cast<::Windows::UI::Xaml::Controls::StackPanel^>(__target);
-            }
-            break;
-        case 5:
-            {
-                this->inputPanel = safe_cast<::Windows::UI::Xaml::Controls::StackPanel^>(__target);
-            }
-            break;
-        case 6:
-            {
-                this->greetingOutput = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 7:
+        case 12:
             {
                 this->nameInput = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
             }
             break;
-        case 8:
+        case 13:
             {
                 this->inputButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
                 (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->inputButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)

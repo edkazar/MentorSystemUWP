@@ -80,3 +80,10 @@ void MentorSystemUWP::MainPage::EnteringRectangle(Platform::Object^ sender, Wind
 {
 	ColoredRectangle->Fill = goldColor;
 }
+
+
+void MentorSystemUWP::MainPage::TestFocusing(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Image^ selected = ((Image^)sender);
+	greetingOutput->Text = "The name is the selected icon is: " + selected->Name;
+}
