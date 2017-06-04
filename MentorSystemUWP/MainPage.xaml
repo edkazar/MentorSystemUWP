@@ -5,10 +5,10 @@
     xmlns:local="using:MentorSystemUWP"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Width="1920" Height="1080">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,-192,90">
-        <StackPanel x:Name="contentPanel" Margin="59,20,71,10">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,0">
+        <StackPanel x:Name="contentPanel" Margin="0,0,0,0">
             <TextBlock HorizontalAlignment="Left" Text="Hello World" FontSize="36"/>
             <TextBlock Text="What's your name?"/>
             <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
@@ -17,6 +17,8 @@
             </StackPanel>
             <TextBlock x:Name="greetingOutput"/>
         </StackPanel>
-        <Rectangle x:Name="ColoredRectangle" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="188" Margin="59,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="422" DoubleTapped="Rectangle_DoubleTapped" DragEnter="Rectangle_DragEntered"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="354" Margin="522,600,0,126" Width="873"/>
+        <Rectangle x:Name="ColoredRectangle" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="188" Margin="50,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="1821" DoubleTapped="Rectangle_DoubleTapped" DragEnter="Rectangle_DragEntered"/>
+        <StackPanel x:Name="drawingPanel" HorizontalAlignment="Left" Height="1065" Margin="0,0,0,0" Width="1910"/>
     </Grid>
 </Page>

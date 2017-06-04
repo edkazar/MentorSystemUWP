@@ -34,6 +34,11 @@ void ::MentorSystemUWP::MainPage::Connect(int __connectionId, ::Platform::Object
             break;
         case 2:
             {
+                this->image = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+            }
+            break;
+        case 3:
+            {
                 this->ColoredRectangle = safe_cast<::Windows::UI::Xaml::Shapes::Rectangle^>(__target);
                 (safe_cast<::Windows::UI::Xaml::Shapes::Rectangle^>(this->ColoredRectangle))->DoubleTapped += ref new ::Windows::UI::Xaml::Input::DoubleTappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
                     (::Platform::Object^, ::Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs^))&MainPage::Rectangle_DoubleTapped);
@@ -41,22 +46,27 @@ void ::MentorSystemUWP::MainPage::Connect(int __connectionId, ::Platform::Object
                     (::Platform::Object^, ::Windows::UI::Xaml::DragEventArgs^))&MainPage::Rectangle_DragEntered);
             }
             break;
-        case 3:
-            {
-                this->inputPanel = safe_cast<::Windows::UI::Xaml::Controls::StackPanel^>(__target);
-            }
-            break;
         case 4:
             {
-                this->greetingOutput = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+                this->drawingPanel = safe_cast<::Windows::UI::Xaml::Controls::StackPanel^>(__target);
             }
             break;
         case 5:
             {
-                this->nameInput = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+                this->inputPanel = safe_cast<::Windows::UI::Xaml::Controls::StackPanel^>(__target);
             }
             break;
         case 6:
+            {
+                this->greetingOutput = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 7:
+            {
+                this->nameInput = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+            }
+            break;
+        case 8:
             {
                 this->inputButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
                 (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->inputButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)

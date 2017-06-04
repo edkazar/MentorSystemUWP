@@ -12,6 +12,7 @@ namespace Windows {
         namespace Xaml {
             namespace Controls {
                 ref class StackPanel;
+                ref class Image;
                 ref class TextBlock;
                 ref class TextBox;
                 ref class Button;
@@ -45,7 +46,9 @@ namespace MentorSystemUWP
         bool _contentLoaded;
     
         private: ::Windows::UI::Xaml::Controls::StackPanel^ contentPanel;
+        private: ::Windows::UI::Xaml::Controls::Image^ image;
         private: ::Windows::UI::Xaml::Shapes::Rectangle^ ColoredRectangle;
+        private: ::Windows::UI::Xaml::Controls::StackPanel^ drawingPanel;
         private: ::Windows::UI::Xaml::Controls::StackPanel^ inputPanel;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ greetingOutput;
         private: ::Windows::UI::Xaml::Controls::TextBox^ nameInput;

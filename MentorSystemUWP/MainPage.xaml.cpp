@@ -17,6 +17,7 @@ using namespace Windows::UI::Xaml::Controls::Primitives;
 using namespace Windows::UI::Xaml::Data;
 using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::Xaml::Media;
+using namespace Windows::UI::Xaml::Shapes;
 using namespace Windows::UI::Xaml::Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -62,6 +63,17 @@ void MentorSystemUWP::MainPage::Rectangle_DragEntered(Platform::Object^ sender, 
 void MentorSystemUWP::MainPage::HoldingRectangle(Platform::Object^ sender, Windows::UI::Xaml::Input::HoldingRoutedEventArgs^ e)
 {
 	ColoredRectangle->Fill = tealColor;
+
+	Polyline^ polyline1 = ref new Polyline();
+	polyline1->Stroke = ref new SolidColorBrush(Windows::UI::Colors::Aquamarine);
+	polyline1->StrokeThickness = 3;
+
+	PointCollection^ points = ref new PointCollection();
+	points->Append(Windows::Foundation::Point(0, 0));
+	points->Append(Windows::Foundation::Point(500, 10));
+	polyline1->Points = points;
+
+	drawingPanel->Children->Append(polyline1);
 }
 
 void MentorSystemUWP::MainPage::EnteringRectangle(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e)
