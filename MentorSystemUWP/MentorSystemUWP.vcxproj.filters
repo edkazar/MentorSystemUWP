@@ -38,163 +38,67 @@
     <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\StoreLogo.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\AnnotationPanel.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\AnnotationPanelHidden.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\ButtonClearAll.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\ButtonErase.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\ButtonExit.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\ButtonLinesOff.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\ButtonLinesOn.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\ButtonPointsOff.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\ButtonPointsOn.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\bvm_selected.png">
       <Filter>Assets</Filter>
     </Image>
     <Image Include="Assets\bvm_shadow.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\ettube_selected.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="Assets\ettube_shadow.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\hand_palpate_selected.png">
       <Filter>Assets</Filter>
     </Image>
     <Image Include="Assets\hand_palpate_shadow.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\hand_point_selected.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="Assets\hand_point_shadow.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\hand_stretch_selected.png">
       <Filter>Assets</Filter>
     </Image>
     <Image Include="Assets\hand_stretch_shadow.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\hemostat_selected.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="Assets\hemostat_shadow.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\iodineswab_selected.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\iodineswab_shadow.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\longhook_selected.png">
       <Filter>Assets</Filter>
     </Image>
     <Image Include="Assets\longhook_shadow.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\retractor_selected.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="Assets\retractor_shadow.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\scalpel_selected.png">
       <Filter>Assets</Filter>
     </Image>
     <Image Include="Assets\scalpel_shadow.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\scissors_selected.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="Assets\scissors_shadow.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\selected_panel_square.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\stethoscope_selected.png">
       <Filter>Assets</Filter>
     </Image>
     <Image Include="Assets\stethoscope_shadow.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\surgical_room.jpg">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\surgicaltape_selected.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="Assets\surgicaltape_shadow.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\syringe_selected.png">
       <Filter>Assets</Filter>
     </Image>
     <Image Include="Assets\syringe_shadow.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\text_close_selected.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="Assets\text_close_shadow.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\text_incision_selected.png">
       <Filter>Assets</Filter>
     </Image>
     <Image Include="Assets\text_incision_shadow.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\text_palpation_selected.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="Assets\text_palpation_shadow.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\text_remove_selected.png">
       <Filter>Assets</Filter>
     </Image>
     <Image Include="Assets\text_remove_shadow.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\text_stitch_selected.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="Assets\text_stitch_shadow.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\tweezers_selected.png">
+    <Image Include="Assets\tweezers_shadow.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\tweezers_shadow.png">
+    <Image Include="Assets\iodineswab_shadow.png">
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>
