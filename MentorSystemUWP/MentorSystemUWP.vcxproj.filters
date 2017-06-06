@@ -101,6 +101,9 @@
     <Image Include="Assets\iodineswab_shadow.png">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="Assets\surgical_room.jpg">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />

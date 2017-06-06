@@ -177,6 +177,7 @@
     <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Image Include="Assets\stethoscope_shadow.png" />
     <Image Include="Assets\surgicaltape_shadow.png" />
+    <Image Include="Assets\surgical_room.jpg" />
     <Image Include="Assets\syringe_shadow.png" />
     <Image Include="Assets\text_close_shadow.png" />
     <Image Include="Assets\text_incision_shadow.png" />

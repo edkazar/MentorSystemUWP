@@ -5,4 +5,13 @@
     xmlns:local="using:MentorSystemUWP"
     RequestedTheme="Light">
 
+    <Application.Resources>
+        <DataTemplate x:Key="GothamHeader">
+            <ContentPresenter>
+                <TextBlock Text="{Binding}" FontFamily="Gotham Bold" FontSize="36"/>
+            </ContentPresenter>
+        </DataTemplate>
+    </Application.Resources>
+    
+    
 </Application>

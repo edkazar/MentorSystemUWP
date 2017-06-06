@@ -11,12 +11,13 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
-                ref class StackPanel;
-                ref class GridView;
                 ref class Image;
+                ref class StackPanel;
+                ref class Pivot;
+                ref class Button;
+                ref class GridView;
                 ref class TextBlock;
                 ref class TextBox;
-                ref class Button;
             }
         }
     }
@@ -46,9 +47,29 @@ namespace MentorSystemUWP
     private:
         bool _contentLoaded;
     
+        private: ::Windows::UI::Xaml::Controls::Image^ BackgroundImage;
         private: ::Windows::UI::Xaml::Controls::StackPanel^ contentPanel;
         private: ::Windows::UI::Xaml::Controls::StackPanel^ drawingPanel;
-        private: ::Windows::UI::Xaml::Controls::GridView^ iconPanel;
+        private: ::Windows::UI::Xaml::Controls::Pivot^ PivotPanel;
+        private: ::Windows::UI::Xaml::Controls::Button^ buttonExit;
+        private: ::Windows::UI::Xaml::Controls::Button^ buttonEraseAll;
+        private: ::Windows::UI::Xaml::Controls::Button^ buttonErase;
+        private: ::Windows::UI::Xaml::Controls::Button^ buttonPoints;
+        private: ::Windows::UI::Xaml::Controls::Button^ buttonLines;
+        private: ::Windows::UI::Xaml::Controls::GridView^ TextsPanel;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage20;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage19;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage18;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage17;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage16;
+        private: ::Windows::UI::Xaml::Controls::GridView^ HandsPanel;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage15;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage14;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage13;
+        private: ::Windows::UI::Xaml::Controls::GridView^ ToolsPanel;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage12;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage11;
+        private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage10;
         private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage9;
         private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage8;
         private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage7;
