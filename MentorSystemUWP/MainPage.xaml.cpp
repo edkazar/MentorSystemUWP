@@ -101,10 +101,24 @@ void MentorSystemUWP::MainPage::imagesPanelTapped(Platform::Object^ sender, Wind
 {
 	ColoredRectangle->Fill = tealColor;
 
+	Point tappedPosition = e->GetPosition(imagesPanel);
+
+	greetingOutput->Text = "Tapped Location: (" + tappedPosition.X.ToString() + "," + tappedPosition.Y.ToString() + ")";
+
 	if (myController->getIconAnnotationSelectedFlag())
 	{
-		greetingOutput->Text = "Selected Icon Path: " + myController->getSelectedIconPath();
-		myController->setIconAnnotationSelectedFlag(1);
+		Uri^ iconUri = ref new Uri(myController->getSelectedIconPath());
+		BitmapImage^ iconBitmap = ref new BitmapImage(iconUri);
+		Image^ iconImage = ref new Image();
+		iconImage->Source = iconBitmap;
+
+		iconImage->Width = 150; iconImage->Height = 150;
+		iconImage->HorizontalAlignment = Windows::UI::Xaml::HorizontalAlignment::Left;
+		iconImage->VerticalAlignment = Windows::UI::Xaml::VerticalAlignment::Top;
+		imagesPanel->Children->Append(iconImage);
+		iconImage->Margin = *(ref new Thickness(tappedPosition.X, tappedPosition.Y, 0, 0));
+
+		myController->setIconAnnotationSelectedFlag(0);
 		myController->setSelectedIconPath(ref new String());
 	}
 }
@@ -113,5 +127,4 @@ void MentorSystemUWP::MainPage::imagesPanelTapped(Platform::Object^ sender, Wind
 void MentorSystemUWP::MainPage::ExitButtonClicked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Application::Current->Exit();
-
 }

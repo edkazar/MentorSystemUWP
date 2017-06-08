@@ -29,8 +29,8 @@ void ::MentorSystemUWP::MainPage::Connect(int __connectionId, ::Platform::Object
     {
         case 1:
             {
-                this->imagesPanel = safe_cast<::Windows::UI::Xaml::Controls::StackPanel^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::StackPanel^>(this->imagesPanel))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                this->imagesPanel = safe_cast<::Windows::UI::Xaml::Controls::Canvas^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Canvas^>(this->imagesPanel))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
                     (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::imagesPanelTapped);
             }
             break;
@@ -84,26 +84,36 @@ void ::MentorSystemUWP::MainPage::Connect(int __connectionId, ::Platform::Object
         case 11:
             {
                 this->iconPanelImage20 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage20))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 12:
             {
                 this->iconPanelImage19 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage19))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 13:
             {
                 this->iconPanelImage18 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage18))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 14:
             {
                 this->iconPanelImage17 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage17))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 15:
             {
                 this->iconPanelImage16 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage16))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 16:
@@ -114,16 +124,22 @@ void ::MentorSystemUWP::MainPage::Connect(int __connectionId, ::Platform::Object
         case 17:
             {
                 this->iconPanelImage15 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage15))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 18:
             {
                 this->iconPanelImage14 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage14))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 19:
             {
                 this->iconPanelImage13 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage13))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 20:
@@ -134,51 +150,71 @@ void ::MentorSystemUWP::MainPage::Connect(int __connectionId, ::Platform::Object
         case 21:
             {
                 this->iconPanelImage12 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage12))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 22:
             {
                 this->iconPanelImage11 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage11))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 23:
             {
                 this->iconPanelImage10 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage10))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 24:
             {
                 this->iconPanelImage9 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage9))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 25:
             {
                 this->iconPanelImage8 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage8))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 26:
             {
                 this->iconPanelImage7 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage7))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 27:
             {
                 this->iconPanelImage6 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage6))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 28:
             {
                 this->iconPanelImage5 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage5))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 29:
             {
                 this->iconPanelImage4 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage4))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 30:
             {
                 this->iconPanelImage3 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->iconPanelImage3))->Tapped += ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&MainPage::iconPanelImageTapped);
             }
             break;
         case 31:

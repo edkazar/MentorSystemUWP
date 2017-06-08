@@ -8,9 +8,9 @@
     mc:Ignorable="d" Width="1920" Height="1080">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,0">
-        <StackPanel x:Name="imagesPanel" Margin="0,0,0,0" Tapped="imagesPanelTapped">
+        <Canvas x:Name="imagesPanel" Margin="0,0,0,0" Tapped="imagesPanelTapped">
             <Image x:Name="BackgroundImage" Source="Assets/operating_room.jpg" Height="1080"/>
-        </StackPanel>
+        </Canvas>
         <StackPanel x:Name="contentPanel" Margin="0,0,0,0">
             <TextBlock HorizontalAlignment="Left" Text="Hello World" FontSize="36" FontFamily="Gotham"/>
             <TextBlock Text="What's your name?" FontFamily="Gotham"/>
@@ -32,66 +32,66 @@
                         <Image x:Name="iconPanelImage2" Height="75" Width="75" Source="Assets/ettube_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage3" Height="75" Width="75" Source="Assets/hemostat_shadow.png"/>
+                        <Image x:Name="iconPanelImage3" Height="75" Width="75" Source="Assets/hemostat_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage4" Height="75" Width="75" Source="Assets/iodineswab_shadow.png"/>
+                        <Image x:Name="iconPanelImage4" Height="75" Width="75" Source="Assets/iodineswab_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage5" Height="75" Width="75" Source="Assets/longhook_shadow.png"/>
+                        <Image x:Name="iconPanelImage5" Height="75" Width="75" Source="Assets/longhook_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage6" Height="75" Width="75" Source="Assets/retractor_shadow.png"/>
+                        <Image x:Name="iconPanelImage6" Height="75" Width="75" Source="Assets/retractor_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage7" Height="75" Width="75" Source="Assets/scalpel_shadow.png"/>
+                        <Image x:Name="iconPanelImage7" Height="75" Width="75" Source="Assets/scalpel_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage8" Height="75" Width="75" Source="Assets/scissors_shadow.png"/>
+                        <Image x:Name="iconPanelImage8" Height="75" Width="75" Source="Assets/scissors_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage9" Height="75" Width="75" Source="Assets/stethoscope_shadow.png"/>
+                        <Image x:Name="iconPanelImage9" Height="75" Width="75" Source="Assets/stethoscope_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage10" Height="75" Width="75" Source="Assets/surgicaltape_shadow.png"/>
+                        <Image x:Name="iconPanelImage10" Height="75" Width="75" Source="Assets/surgicaltape_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage11" Height="75" Width="75" Source="Assets/syringe_shadow.png"/>
+                        <Image x:Name="iconPanelImage11" Height="75" Width="75" Source="Assets/syringe_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage12" Height="75" Width="75" Source="Assets/tweezers_shadow.png"/>
+                        <Image x:Name="iconPanelImage12" Height="75" Width="75" Source="Assets/tweezers_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                 </GridView>
             </PivotItem>
             <PivotItem Header="Hands">
                 <GridView x:Name="HandsPanel">
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage13" Height="75" Width="75" Source="Assets/hand_palpate_shadow.png"/>
+                        <Image x:Name="iconPanelImage13" Height="75" Width="75" Source="Assets/hand_palpate_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage14" Height="75" Width="75" Source="Assets/hand_point_shadow.png"/>
+                        <Image x:Name="iconPanelImage14" Height="75" Width="75" Source="Assets/hand_point_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage15" Height="75" Width="75" Source="Assets/hand_stretch_shadow.png"/>
+                        <Image x:Name="iconPanelImage15" Height="75" Width="75" Source="Assets/hand_stretch_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                 </GridView>
             </PivotItem>
             <PivotItem Header="Texts">
                 <GridView x:Name="TextsPanel">
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage16" Height="75" Width="75" Source="Assets/text_close_shadow.png"/>
+                        <Image x:Name="iconPanelImage16" Height="75" Width="75" Source="Assets/text_close_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage17" Height="75" Width="75" Source="Assets/text_incision_shadow.png"/>
+                        <Image x:Name="iconPanelImage17" Height="75" Width="75" Source="Assets/text_incision_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage18" Height="75" Width="75" Source="Assets/text_palpation_shadow.png"/>
+                        <Image x:Name="iconPanelImage18" Height="75" Width="75" Source="Assets/text_palpation_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage19" Height="75" Width="75" Source="Assets/text_remove_shadow.png"/>
+                        <Image x:Name="iconPanelImage19" Height="75" Width="75" Source="Assets/text_remove_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                     <Border BorderBrush="LightGray" BorderThickness="3">
-                        <Image x:Name="iconPanelImage20" Height="75" Width="75" Source="Assets/text_stitch_shadow.png"/>
+                        <Image x:Name="iconPanelImage20" Height="75" Width="75" Source="Assets/text_stitch_shadow.png" Tapped="iconPanelImageTapped"/>
                     </Border>
                 </GridView>
             </PivotItem>
