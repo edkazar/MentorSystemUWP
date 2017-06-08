@@ -23,6 +23,8 @@ namespace MentorSystemUWP
 		void Rectangle_DragEntered(Platform::Object^ sender, Windows::UI::Xaml::DragEventArgs^ e);
 		void HoldingRectangle(Platform::Object^ sender, Windows::UI::Xaml::Input::HoldingRoutedEventArgs^ e);
 		void EnteringRectangle(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e);
-		void TestFocusing(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void iconPanelImageTapped(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e);
+		void imagesPanelTapped(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e);
+		void ExitButtonClicked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
 }

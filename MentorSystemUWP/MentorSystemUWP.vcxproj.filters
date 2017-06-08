@@ -8,6 +8,12 @@
       <UniqueIdentifier>b70e6470-2c1e-4099-8508-c75365b76af9</UniqueIdentifier>
       <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
     </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{b225da41-18d0-466a-ac04-1c93951db171}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{d8355b2f-f08d-4019-8073-8311beb3682c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
@@ -16,11 +22,17 @@
     <ClCompile Include="App.xaml.cpp" />
     <ClCompile Include="MainPage.xaml.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="ControlCenter.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h" />
     <ClInclude Include="MainPage.xaml.h" />
+    <ClInclude Include="ControlCenter.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LockScreenLogo.scale-200.png">
@@ -101,7 +113,7 @@
     <Image Include="Assets\iodineswab_shadow.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\surgical_room.jpg">
+    <Image Include="Assets\operating_room.jpg">
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>

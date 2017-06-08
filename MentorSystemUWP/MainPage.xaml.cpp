@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
+#include "ControlCenter.h"
 
 using namespace MentorSystemUWP;
 
@@ -18,9 +19,12 @@ using namespace Windows::UI::Xaml::Data;
 using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::Xaml::Media;
 using namespace Windows::UI::Xaml::Shapes;
+using namespace Windows::UI::Xaml::Media::Imaging;
 using namespace Windows::UI::Xaml::Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+
+ControlCenter^ myController;
 
 SolidColorBrush^ redColor;
 SolidColorBrush^ greenColor;
@@ -30,6 +34,7 @@ SolidColorBrush^ goldColor;
 MainPage::MainPage()
 {
 	InitializeComponent();
+	myController = ref new ControlCenter();
 
 	redColor = ref new SolidColorBrush(Windows::UI::Colors::Red);
 	greenColor = ref new SolidColorBrush(Windows::UI::Colors::Green);
@@ -81,9 +86,32 @@ void MentorSystemUWP::MainPage::EnteringRectangle(Platform::Object^ sender, Wind
 	ColoredRectangle->Fill = goldColor;
 }
 
-
-void MentorSystemUWP::MainPage::TestFocusing(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+void MentorSystemUWP::MainPage::iconPanelImageTapped(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e)
 {
-	Image^ selected = ((Image^)sender);
-	greetingOutput->Text = "The name is the selected icon is: " + selected->Name;
+	auto selectedImage = dynamic_cast<Image^>(sender);
+	auto selectedSource = dynamic_cast<BitmapImage^>(selectedImage->Source);
+	Uri^ selectedUri = selectedSource->UriSource; 
+
+	myController->setIconAnnotationSelectedFlag(1);
+	myController->setSelectedIconPath(selectedUri->AbsoluteUri);
+}
+
+
+void MentorSystemUWP::MainPage::imagesPanelTapped(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e)
+{
+	ColoredRectangle->Fill = tealColor;
+
+	if (myController->getIconAnnotationSelectedFlag())
+	{
+		greetingOutput->Text = "Selected Icon Path: " + myController->getSelectedIconPath();
+		myController->setIconAnnotationSelectedFlag(1);
+		myController->setSelectedIconPath(ref new String());
+	}
+}
+
+
+void MentorSystemUWP::MainPage::ExitButtonClicked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Application::Current->Exit();
+
 }

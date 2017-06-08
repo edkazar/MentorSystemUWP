@@ -11,11 +11,11 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
-                ref class Image;
                 ref class StackPanel;
                 ref class Pivot;
                 ref class Button;
                 ref class GridView;
+                ref class Image;
                 ref class TextBlock;
                 ref class TextBox;
             }
@@ -47,7 +47,7 @@ namespace MentorSystemUWP
     private:
         bool _contentLoaded;
     
-        private: ::Windows::UI::Xaml::Controls::Image^ BackgroundImage;
+        private: ::Windows::UI::Xaml::Controls::StackPanel^ imagesPanel;
         private: ::Windows::UI::Xaml::Controls::StackPanel^ contentPanel;
         private: ::Windows::UI::Xaml::Controls::StackPanel^ drawingPanel;
         private: ::Windows::UI::Xaml::Controls::Pivot^ PivotPanel;
@@ -84,6 +84,7 @@ namespace MentorSystemUWP
         private: ::Windows::UI::Xaml::Shapes::Rectangle^ ColoredRectangle;
         private: ::Windows::UI::Xaml::Controls::TextBox^ nameInput;
         private: ::Windows::UI::Xaml::Controls::Button^ inputButton;
+        private: ::Windows::UI::Xaml::Controls::Image^ BackgroundImage;
     };
 }
 
