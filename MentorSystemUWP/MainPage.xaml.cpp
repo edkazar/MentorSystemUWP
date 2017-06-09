@@ -124,6 +124,8 @@ void MentorSystemUWP::MainPage::CreateIconAnnotation(Windows::UI::Xaml::Input::T
 	iconImage->ManipulationStarted += ref new ManipulationStartedEventHandler(this, &MainPage::IconImage_ManipulationStarted);
 	iconImage->ManipulationDelta += ref new ManipulationDeltaEventHandler(this, &MainPage::IconImage_ManipulationDelta);
 	iconImage->ManipulationCompleted += ref new ManipulationCompletedEventHandler(this, &MainPage::IconImage_ManipulationCompleted);
+	iconImage->ManipulationMode = Windows::UI::Xaml::Input::ManipulationModes::Rotate;
+	iconImage->ManipulationMode = iconImage->ManipulationMode + Windows::UI::Xaml::Input::ManipulationModes::Scale;
 	iconImage->ManipulationMode = iconImage->ManipulationMode + Windows::UI::Xaml::Input::ManipulationModes::TranslateX;
 	iconImage->ManipulationMode = iconImage->ManipulationMode + Windows::UI::Xaml::Input::ManipulationModes::TranslateY;
 	iconImage->RenderTransform = ref new Windows::UI::Xaml::Media::CompositeTransform();
@@ -146,6 +148,9 @@ void MentorSystemUWP::MainPage::IconImage_ManipulationDelta(Platform::Object^ se
 {
 	auto selectedIcon = dynamic_cast<Image^>(sender);
 	Windows::UI::Xaml::Media::CompositeTransform^ myTransform = dynamic_cast<CompositeTransform^>(selectedIcon->RenderTransform);
+	myTransform->Rotation += e->Delta.Rotation;
+	myTransform->ScaleX *= e->Delta.Scale;
+	myTransform->ScaleY *= e->Delta.Scale;
 	myTransform->TranslateX += e->Delta.Translation.X;
 	myTransform->TranslateY += e->Delta.Translation.Y;
 }

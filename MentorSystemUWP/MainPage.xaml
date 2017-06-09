@@ -10,15 +10,6 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,0">
         <Canvas x:Name="imagesPanel" Margin="0,0,0,0" Tapped="imagesPanelTapped">
             <Image x:Name="BackgroundImage" Source="Assets/operating_room.jpg" Height="1080"/>
-            <Image x:Name="Stetos" Source="Assets/stethoscope_shadow.png" Height="150" Canvas.Left="1140" Canvas.Top="588"
-                   ManipulationMode = "TranslateX, TranslateY, Scale"
-                   ManipulationStarted = "IconImage_ManipulationStarted"
-                   ManipulationDelta = "IconImage_ManipulationDelta"
-                   ManipulationCompleted = "IconImage_ManipulationCompleted">
-                <Image.RenderTransform>
-                    <CompositeTransform x:Name="image_Transform"></CompositeTransform>
-                </Image.RenderTransform>
-            </Image>
         </Canvas>
         <StackPanel x:Name="contentPanel" Margin="0,0,0,0">
             <TextBlock HorizontalAlignment="Left" Text="Hello World" FontSize="36" FontFamily="Gotham"/>
