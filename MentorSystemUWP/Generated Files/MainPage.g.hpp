@@ -246,8 +246,6 @@ void ::MentorSystemUWP::MainPage::Connect(int __connectionId, ::Platform::Object
                 this->ColoredRectangle = safe_cast<::Windows::UI::Xaml::Shapes::Rectangle^>(__target);
                 (safe_cast<::Windows::UI::Xaml::Shapes::Rectangle^>(this->ColoredRectangle))->DoubleTapped += ref new ::Windows::UI::Xaml::Input::DoubleTappedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
                     (::Platform::Object^, ::Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs^))&MainPage::Rectangle_DoubleTapped);
-                (safe_cast<::Windows::UI::Xaml::Shapes::Rectangle^>(this->ColoredRectangle))->DragEnter += ref new ::Windows::UI::Xaml::DragEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::DragEventArgs^))&MainPage::Rectangle_DragEntered);
             }
             break;
         case 36:
@@ -265,6 +263,22 @@ void ::MentorSystemUWP::MainPage::Connect(int __connectionId, ::Platform::Object
         case 38:
             {
                 this->BackgroundImage = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+            }
+            break;
+        case 39:
+            {
+                this->Stetos = safe_cast<::Windows::UI::Xaml::Controls::Image^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->Stetos))->ManipulationStarted += ref new ::Windows::UI::Xaml::Input::ManipulationStartedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs^))&MainPage::IconImage_ManipulationStarted);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->Stetos))->ManipulationDelta += ref new ::Windows::UI::Xaml::Input::ManipulationDeltaEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs^))&MainPage::IconImage_ManipulationDelta);
+                (safe_cast<::Windows::UI::Xaml::Controls::Image^>(this->Stetos))->ManipulationCompleted += ref new ::Windows::UI::Xaml::Input::ManipulationCompletedEventHandler(this, (void (::MentorSystemUWP::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs^))&MainPage::IconImage_ManipulationCompleted);
+            }
+            break;
+        case 40:
+            {
+                this->image_Transform = safe_cast<::Windows::UI::Xaml::Media::CompositeTransform^>(__target);
             }
             break;
     }

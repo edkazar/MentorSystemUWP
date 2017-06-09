@@ -59,12 +59,6 @@ void MentorSystemUWP::MainPage::Rectangle_DoubleTapped(Platform::Object^ sender,
 	ColoredRectangle->Fill = greenColor;
 }
 
-
-void MentorSystemUWP::MainPage::Rectangle_DragEntered(Platform::Object^ sender, Windows::UI::Xaml::DragEventArgs^ e)
-{
-	//ColoredRectangle->Fill = tealColor;
-}
-
 void MentorSystemUWP::MainPage::HoldingRectangle(Platform::Object^ sender, Windows::UI::Xaml::Input::HoldingRoutedEventArgs^ e)
 {
 	ColoredRectangle->Fill = tealColor;
@@ -103,8 +97,6 @@ void MentorSystemUWP::MainPage::imagesPanelTapped(Platform::Object^ sender, Wind
 
 	Point tappedPosition = e->GetPosition(imagesPanel);
 
-	greetingOutput->Text = "Tapped Location: (" + tappedPosition.X.ToString() + "," + tappedPosition.Y.ToString() + ")";
-
 	if (myController->getIconAnnotationSelectedFlag())
 	{
 		Uri^ iconUri = ref new Uri(myController->getSelectedIconPath());
@@ -118,13 +110,57 @@ void MentorSystemUWP::MainPage::imagesPanelTapped(Platform::Object^ sender, Wind
 		imagesPanel->Children->Append(iconImage);
 		iconImage->Margin = *(ref new Thickness(tappedPosition.X, tappedPosition.Y, 0, 0));
 
+		//iconImage->PointerMoved += ref new PointerEventHandler(this, &MainPage::DraggingImage);
+		iconImage->ManipulationStarted += ref new ManipulationStartedEventHandler(this, &MainPage::IconImage_ManipulationStarted);
+		iconImage->ManipulationDelta += ref new ManipulationDeltaEventHandler(this, &MainPage::IconImage_ManipulationDelta);
+		iconImage->ManipulationCompleted += ref new ManipulationCompletedEventHandler(this, &MainPage::IconImage_ManipulationCompleted);
+		iconImage->ManipulationMode = iconImage->ManipulationMode + Windows::UI::Xaml::Input::ManipulationModes::TranslateX;
+		iconImage->ManipulationMode = iconImage->ManipulationMode + Windows::UI::Xaml::Input::ManipulationModes::TranslateY;
+		iconImage->RenderTransform = image_Transform;
+
 		myController->setIconAnnotationSelectedFlag(0);
 		myController->setSelectedIconPath(ref new String());
 	}
 }
 
-
 void MentorSystemUWP::MainPage::ExitButtonClicked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Application::Current->Exit();
+}
+
+void MentorSystemUWP::MainPage::DraggingImage(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e)
+{
+	Windows::UI::Input::PointerPoint^ currentPositionInPanel = e->GetCurrentPoint(imagesPanel);
+	Windows::UI::Input::PointerPoint^ currentPositionInIcon = e->GetCurrentPoint(dynamic_cast<Image^>(sender));
+	
+	dynamic_cast<Image^>(sender)->Margin = *(ref new Thickness(((currentPositionInPanel->RawPosition.X) - (currentPositionInIcon->RawPosition.X)),
+		((currentPositionInPanel->RawPosition.Y) - (currentPositionInIcon->RawPosition.Y)), 0, 0));
+
+	greetingOutput->Text = "Tapped Location: (" + currentPositionInPanel->RawPosition.X.ToString() + "," + currentPositionInPanel->RawPosition.Y.ToString() + ")";
+	//Windows::UI::Input::PointerPoint^ currentPosition = e->>GetCurrentPoint();
+	//currentPosition->
+	//currentPosition.Position
+}
+
+void MentorSystemUWP::MainPage::IconImage_ManipulationStarted(Platform::Object^ sender, Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs^ e)
+{
+	//greetingOutput->Text = "Icon name: " + dynamic_cast<Image^>(sender)->Name;
+	auto selectedIcon = dynamic_cast<Image^>(sender);
+	selectedIcon->Opacity = 0.4;
+}
+
+
+void MentorSystemUWP::MainPage::IconImage_ManipulationDelta(Platform::Object^ sender, Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs^ e)
+{
+	//auto selectedIcon = dynamic_cast<Image^>(sender);
+	//selectedIcon->RenderTransform.TranslateX += e->Delta.Translation.X;
+	this->image_Transform->TranslateX += e->Delta.Translation.X;
+	this->image_Transform->TranslateY += e->Delta.Translation.Y;
+}
+
+
+void MentorSystemUWP::MainPage::IconImage_ManipulationCompleted(Platform::Object^ sender, Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs^ e)
+{
+	auto selectedIcon = dynamic_cast<Image^>(sender);
+	selectedIcon->Opacity = 1;
 }

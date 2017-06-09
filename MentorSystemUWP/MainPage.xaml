@@ -10,6 +10,15 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,0">
         <Canvas x:Name="imagesPanel" Margin="0,0,0,0" Tapped="imagesPanelTapped">
             <Image x:Name="BackgroundImage" Source="Assets/operating_room.jpg" Height="1080"/>
+            <Image x:Name="Stetos" Source="Assets/stethoscope_shadow.png" Height="150" Canvas.Left="1140" Canvas.Top="588"
+                   ManipulationMode = "TranslateX, TranslateY, Scale"
+                   ManipulationStarted = "IconImage_ManipulationStarted"
+                   ManipulationDelta = "IconImage_ManipulationDelta"
+                   ManipulationCompleted = "IconImage_ManipulationCompleted">
+                <Image.RenderTransform>
+                    <CompositeTransform x:Name="image_Transform"></CompositeTransform>
+                </Image.RenderTransform>
+            </Image>
         </Canvas>
         <StackPanel x:Name="contentPanel" Margin="0,0,0,0">
             <TextBlock HorizontalAlignment="Left" Text="Hello World" FontSize="36" FontFamily="Gotham"/>
@@ -19,7 +28,7 @@
                 <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click" FontFamily="Gotham"/>
             </StackPanel>
             <TextBlock x:Name="greetingOutput"/>
-            <Rectangle x:Name="ColoredRectangle" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="160" Margin="38,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="160" DoubleTapped="Rectangle_DoubleTapped" DragEnter="Rectangle_DragEntered"/>
+            <Rectangle x:Name="ColoredRectangle" Fill="#FFF4F4F5" CanDrag="True" HorizontalAlignment="Left" Height="160" Margin="38,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="160" DoubleTapped="Rectangle_DoubleTapped"/>
         </StackPanel>
         <StackPanel x:Name="drawingPanel" HorizontalAlignment="Left" Height="1080" Margin="0,0,0,0" Width="1920"/>
         <Pivot x:Name="PivotPanel" Margin="0,939,876,0" Background="#7F706E6E" HeaderTemplate="{StaticResource GothamHeader}">

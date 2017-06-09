@@ -32,6 +32,15 @@ namespace Windows {
         }
     }
 }
+namespace Windows {
+    namespace UI {
+        namespace Xaml {
+            namespace Media {
+                ref class CompositeTransform;
+            }
+        }
+    }
+}
 
 namespace MentorSystemUWP
 {
@@ -86,6 +95,8 @@ namespace MentorSystemUWP
         private: ::Windows::UI::Xaml::Controls::TextBox^ nameInput;
         private: ::Windows::UI::Xaml::Controls::Button^ inputButton;
         private: ::Windows::UI::Xaml::Controls::Image^ BackgroundImage;
+        private: ::Windows::UI::Xaml::Controls::Image^ Stetos;
+        private: ::Windows::UI::Xaml::Media::CompositeTransform^ image_Transform;
     };
 }
 
