@@ -31,6 +31,11 @@ SolidColorBrush^ greenColor;
 SolidColorBrush^ tealColor;
 SolidColorBrush^ goldColor;
 
+SolidColorBrush^ buttonCheckedColor;
+SolidColorBrush^ buttonUncheckedColor;
+
+Polyline^ LineAnnotation;
+
 MainPage::MainPage()
 {
 	InitializeComponent();
@@ -40,12 +45,30 @@ MainPage::MainPage()
 	greenColor = ref new SolidColorBrush(Windows::UI::Colors::Green);
 	tealColor = ref new SolidColorBrush(Windows::UI::Colors::Teal);
 	goldColor = ref new SolidColorBrush(Windows::UI::Colors::Gold);
+	CreateButtonsColor();
+
+	ResetLineAnnotation();
 
 	ColoredRectangle->PointerEntered += ref new PointerEventHandler(this, &MainPage::EnteringRectangle);
 
 	ColoredRectangle->Holding += ref new HoldingEventHandler(this, &MainPage::HoldingRectangle);
 }
 
+void MentorSystemUWP::MainPage::CreateButtonsColor()
+{
+	Windows::UI::Color tempRGBAColor;
+	tempRGBAColor.R = 29;
+	tempRGBAColor.G = 122;
+	tempRGBAColor.B = 216;
+	tempRGBAColor.A = 255;
+	buttonCheckedColor = ref new SolidColorBrush(tempRGBAColor);
+
+	tempRGBAColor.R = 182;
+	tempRGBAColor.G = 175;
+	tempRGBAColor.B = 175;
+	tempRGBAColor.A = 255;
+	buttonUncheckedColor = ref new SolidColorBrush(tempRGBAColor);
+}
 
 void MentorSystemUWP::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
@@ -65,12 +88,21 @@ void MentorSystemUWP::MainPage::HoldingRectangle(Platform::Object^ sender, Windo
 
 	Polyline^ polyline1 = ref new Polyline();
 	polyline1->Stroke = ref new SolidColorBrush(Windows::UI::Colors::Aquamarine);
-	polyline1->StrokeThickness = 3;
+	polyline1->StrokeThickness = 5;
 
 	PointCollection^ points = ref new PointCollection();
 	points->Append(Windows::Foundation::Point(0, 0));
 	points->Append(Windows::Foundation::Point(500, 10));
 	polyline1->Points = points;
+
+	polyline1->ManipulationStarted += ref new ManipulationStartedEventHandler(this, &MainPage::IconImage_ManipulationStarted);
+	polyline1->ManipulationDelta += ref new ManipulationDeltaEventHandler(this, &MainPage::IconImage_ManipulationDelta);
+	polyline1->ManipulationCompleted += ref new ManipulationCompletedEventHandler(this, &MainPage::IconImage_ManipulationCompleted);
+	polyline1->ManipulationMode = Windows::UI::Xaml::Input::ManipulationModes::Rotate;
+	polyline1->ManipulationMode = polyline1->ManipulationMode + Windows::UI::Xaml::Input::ManipulationModes::Scale;
+	polyline1->ManipulationMode = polyline1->ManipulationMode + Windows::UI::Xaml::Input::ManipulationModes::TranslateX;
+	polyline1->ManipulationMode = polyline1->ManipulationMode + Windows::UI::Xaml::Input::ManipulationModes::TranslateY;
+	polyline1->RenderTransform = ref new Windows::UI::Xaml::Media::CompositeTransform();
 
 	drawingPanel->Children->Append(polyline1);
 }
@@ -138,16 +170,34 @@ void MentorSystemUWP::MainPage::ExitButtonClicked(Platform::Object^ sender, Wind
 
 void MentorSystemUWP::MainPage::IconImage_ManipulationStarted(Platform::Object^ sender, Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs^ e)
 {
-	greetingOutput->Text = "Icon name: " + dynamic_cast<Image^>(sender)->Name;
-	auto selectedIcon = dynamic_cast<Image^>(sender);
-	selectedIcon->Opacity = 0.4;
+	if ("Windows.UI.Xaml.Controls.Image" == sender->GetType()->ToString())
+	{
+		auto selectedElement = dynamic_cast<Image^>(sender);
+		selectedElement->Opacity = 0.4;
+	}
+	else
+	{
+		auto selectedElement = dynamic_cast<Polyline^>(sender);
+		selectedElement->Opacity = 0.4;
+	}
 }
 
 
 void MentorSystemUWP::MainPage::IconImage_ManipulationDelta(Platform::Object^ sender, Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs^ e)
 {
-	auto selectedIcon = dynamic_cast<Image^>(sender);
-	Windows::UI::Xaml::Media::CompositeTransform^ myTransform = dynamic_cast<CompositeTransform^>(selectedIcon->RenderTransform);
+	Windows::UI::Xaml::Media::CompositeTransform^ myTransform;
+
+	if ("Windows.UI.Xaml.Controls.Image" == sender->GetType()->ToString())
+	{
+		auto selectedElement = dynamic_cast<Image^>(sender);
+		myTransform = dynamic_cast<CompositeTransform^>(selectedElement->RenderTransform);
+	}
+	else
+	{
+		auto selectedElement = dynamic_cast<Polyline^>(sender);
+		myTransform = dynamic_cast<CompositeTransform^>(selectedElement->RenderTransform);
+	}
+
 	myTransform->Rotation += e->Delta.Rotation;
 	myTransform->ScaleX *= e->Delta.Scale;
 	myTransform->ScaleY *= e->Delta.Scale;
@@ -158,6 +208,83 @@ void MentorSystemUWP::MainPage::IconImage_ManipulationDelta(Platform::Object^ se
 
 void MentorSystemUWP::MainPage::IconImage_ManipulationCompleted(Platform::Object^ sender, Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs^ e)
 {
-	auto selectedIcon = dynamic_cast<Image^>(sender);
-	selectedIcon->Opacity = 1;
+	if ("Windows.UI.Xaml.Controls.Image" == sender->GetType()->ToString())
+	{
+		auto selectedElement = dynamic_cast<Image^>(sender);
+		selectedElement->Opacity = 1;
+	}
+	else
+	{
+		auto selectedElement = dynamic_cast<Polyline^>(sender);
+		selectedElement->Opacity = 1;
+	}
+
+	if (buttonErase->IsPointerOver)
+	{
+		greetingOutput->Text = "Trashing";
+	}
+}
+
+
+
+void MentorSystemUWP::MainPage::ResetLineAnnotation()
+{
+	LineAnnotation = ref new Polyline();
+	LineAnnotation->Stroke = ref new SolidColorBrush(Windows::UI::Colors::Aquamarine);
+	LineAnnotation->StrokeThickness = 7;
+	LineAnnotation->ManipulationStarted += ref new ManipulationStartedEventHandler(this, &MainPage::IconImage_ManipulationStarted);
+	LineAnnotation->ManipulationDelta += ref new ManipulationDeltaEventHandler(this, &MainPage::IconImage_ManipulationDelta);
+	LineAnnotation->ManipulationCompleted += ref new ManipulationCompletedEventHandler(this, &MainPage::IconImage_ManipulationCompleted);
+	LineAnnotation->ManipulationMode = LineAnnotation->ManipulationMode + Windows::UI::Xaml::Input::ManipulationModes::TranslateX;
+	LineAnnotation->ManipulationMode = LineAnnotation->ManipulationMode + Windows::UI::Xaml::Input::ManipulationModes::TranslateY;
+	LineAnnotation->RenderTransform = ref new Windows::UI::Xaml::Media::CompositeTransform();
+}
+
+void MentorSystemUWP::MainPage::EraseAllButtonClicked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	imagesPanel->Children->Clear();
+	drawingPanel->Children->Clear();
+}
+
+void MentorSystemUWP::MainPage::LinesButtonChecked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	buttonLinesBorder->Background = buttonCheckedColor;
+};
+
+
+void MentorSystemUWP::MainPage::LinesButtonUnchecked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	buttonLinesBorder->Background = buttonUncheckedColor;
+}
+
+
+void MentorSystemUWP::MainPage::PointsButtonChecked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	buttonPointsBorder->Background = buttonCheckedColor;
+}
+
+
+void MentorSystemUWP::MainPage::PointsButtonUnchecked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	buttonPointsBorder->Background = buttonUncheckedColor;
+}
+
+
+void MentorSystemUWP::MainPage::LineDrawing(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e)
+{
+	if (buttonLines->IsChecked->Value)
+	{
+		LineAnnotation->Points->Append(Windows::Foundation::Point(e->GetCurrentPoint(imagesPanel)->Position.X, e->GetCurrentPoint(imagesPanel)->Position.Y));
+	}
+}
+
+void MentorSystemUWP::MainPage::LineStopped(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e)
+{
+	if (buttonLines->IsChecked->Value)
+	{
+		greetingOutput->Text = "Stop Drawing";
+		drawingPanel->Children->Append(LineAnnotation);
+
+		ResetLineAnnotation();
+	}
 }

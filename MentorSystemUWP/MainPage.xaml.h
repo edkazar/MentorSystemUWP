@@ -29,6 +29,16 @@ namespace MentorSystemUWP
 		void IconImage_ManipulationDelta(Platform::Object^ sender, Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs^ e);
 		void IconImage_ManipulationCompleted(Platform::Object^ sender, Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs^ e);
 
+		void CreateButtonsColor();
 		void CreateIconAnnotation(Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e);
+		void ResetLineAnnotation();
+
+		void EraseAllButtonClicked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void LinesButtonChecked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void LinesButtonUnchecked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void PointsButtonChecked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void PointsButtonUnchecked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void LineDrawing(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e);
+		void LineStopped(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e);
 	};
 }

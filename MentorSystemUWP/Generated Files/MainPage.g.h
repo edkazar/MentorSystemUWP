@@ -11,14 +11,26 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
+                ref class Image;
                 ref class Canvas;
                 ref class StackPanel;
                 ref class Pivot;
+                ref class Border;
                 ref class Button;
                 ref class GridView;
-                ref class Image;
                 ref class TextBlock;
                 ref class TextBox;
+            }
+        }
+    }
+}
+namespace Windows {
+    namespace UI {
+        namespace Xaml {
+            namespace Controls {
+                namespace Primitives {
+                    ref class ToggleButton;
+                }
             }
         }
     }
@@ -48,15 +60,18 @@ namespace MentorSystemUWP
     private:
         bool _contentLoaded;
     
+        private: ::Windows::UI::Xaml::Controls::Image^ BackgroundImage;
         private: ::Windows::UI::Xaml::Controls::Canvas^ imagesPanel;
         private: ::Windows::UI::Xaml::Controls::StackPanel^ contentPanel;
-        private: ::Windows::UI::Xaml::Controls::StackPanel^ drawingPanel;
+        private: ::Windows::UI::Xaml::Controls::Canvas^ drawingPanel;
         private: ::Windows::UI::Xaml::Controls::Pivot^ PivotPanel;
+        private: ::Windows::UI::Xaml::Controls::Border^ buttonLinesBorder;
+        private: ::Windows::UI::Xaml::Controls::Border^ buttonPointsBorder;
         private: ::Windows::UI::Xaml::Controls::Button^ buttonExit;
         private: ::Windows::UI::Xaml::Controls::Button^ buttonEraseAll;
         private: ::Windows::UI::Xaml::Controls::Button^ buttonErase;
-        private: ::Windows::UI::Xaml::Controls::Button^ buttonPoints;
-        private: ::Windows::UI::Xaml::Controls::Button^ buttonLines;
+        private: ::Windows::UI::Xaml::Controls::Primitives::ToggleButton^ buttonPoints;
+        private: ::Windows::UI::Xaml::Controls::Primitives::ToggleButton^ buttonLines;
         private: ::Windows::UI::Xaml::Controls::GridView^ TextsPanel;
         private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage20;
         private: ::Windows::UI::Xaml::Controls::Image^ iconPanelImage19;
@@ -85,7 +100,6 @@ namespace MentorSystemUWP
         private: ::Windows::UI::Xaml::Shapes::Rectangle^ ColoredRectangle;
         private: ::Windows::UI::Xaml::Controls::TextBox^ nameInput;
         private: ::Windows::UI::Xaml::Controls::Button^ inputButton;
-        private: ::Windows::UI::Xaml::Controls::Image^ BackgroundImage;
     };
 }
 

@@ -8,8 +8,8 @@
     mc:Ignorable="d" Width="1920" Height="1080">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,0">
-        <Canvas x:Name="imagesPanel" Margin="0,0,0,0" Tapped="imagesPanelTapped">
-            <Image x:Name="BackgroundImage" Source="Assets/operating_room.jpg" Height="1080"/>
+        <Image x:Name="BackgroundImage" Source="Assets/operating_room.jpg" Height="1080" Tapped="imagesPanelTapped" PointerMoved="LineDrawing" PointerExited="LineStopped"/>
+        <Canvas x:Name="imagesPanel" Margin="0,0,0,0">
         </Canvas>
         <StackPanel x:Name="contentPanel" Margin="0,0,0,0">
             <TextBlock HorizontalAlignment="Left" Text="Hello World" FontSize="36" FontFamily="Gotham"/>
@@ -21,7 +21,7 @@
             <TextBlock x:Name="greetingOutput"/>
             <Rectangle x:Name="ColoredRectangle" Fill="#FFF4F4F5" CanDrag="True" HorizontalAlignment="Left" Height="160" Margin="38,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="160" DoubleTapped="Rectangle_DoubleTapped"/>
         </StackPanel>
-        <StackPanel x:Name="drawingPanel" HorizontalAlignment="Left" Height="1080" Margin="0,0,0,0" Width="1920"/>
+        <Canvas x:Name="drawingPanel" HorizontalAlignment="Left" Height="1080" Margin="0,0,0,0" Width="1920"/>
         <Pivot x:Name="PivotPanel" Margin="0,939,876,0" Background="#7F706E6E" HeaderTemplate="{StaticResource GothamHeader}">
             <PivotItem Header="Tools">
                 <GridView x:Name="ToolsPanel">
@@ -96,17 +96,17 @@
                 </GridView>
             </PivotItem>
         </Pivot>
-        <Border BorderBrush="LightGray" BorderThickness="3" Height="130" Background="#FFB6AFAF" Width="130" CornerRadius="15" Margin="1072,941,708,5">
-            <Button x:Name="buttonLines" Content="Lines" Height="116" VerticalAlignment="Top" Width="113" FontSize="32" FontFamily="Gotham" Margin="6,5,0,0" Background="#FFB6AFAF"/>
+        <Border x:Name="buttonLinesBorder" BorderBrush="LightGray" BorderThickness="3" Height="130" Background="#FFB6AFAF" Width="130" CornerRadius="15" Margin="1072,941,708,5">
+            <ToggleButton x:Name="buttonLines" Content="Lines" Height="116" VerticalAlignment="Top" Width="113" FontSize="32" FontFamily="Gotham" Margin="6,5,0,0" Background="#FFB6AFAF" Checked="LinesButtonChecked" Unchecked="LinesButtonUnchecked"/>
         </Border>
-        <Border BorderBrush="LightGray" BorderThickness="3" Height="130" Background="#FFB6AFAF" Width="130" CornerRadius="15" Margin="1242,941,538,5">
-            <Button x:Name="buttonPoints" Content="Points" Height="116" VerticalAlignment="Top" Width="117" FontSize="32" FontFamily="Gotham" Margin="4,5,0,0" Background="#FFB6AFAF"/>
+        <Border x:Name="buttonPointsBorder" BorderBrush="LightGray" BorderThickness="3" Height="130" Background="#FFB6AFAF" Width="130" CornerRadius="15" Margin="1242,941,538,5">
+            <ToggleButton x:Name="buttonPoints" Content="Points" Height="114" VerticalAlignment="Top" Width="116" FontSize="32" FontFamily="Gotham" Margin="4,5,0,0" Background="#FFB6AFAF" Checked="PointsButtonChecked" Unchecked="PointsButtonUnchecked"/>
         </Border>
         <Border BorderBrush="LightGray" BorderThickness="3" Height="130" Background="#FFB6AFAF" Width="130" CornerRadius="15" Margin="1412,941,368,5">
             <Button x:Name="buttonErase" Content="Erase" Height="116" VerticalAlignment="Top" Width="113" FontSize="32" FontFamily="Gotham" Margin="6,5,0,0" Background="#FFB6AFAF"/>
         </Border>
         <Border BorderBrush="LightGray" BorderThickness="3" Height="130" Background="#FFB6AFAF" Width="130" CornerRadius="15" Margin="1582,941,198,5">
-            <Button x:Name="buttonEraseAll" Content="Erase&#x0a; ALL" Height="116" VerticalAlignment="Top" Width="113" FontSize="32" FontFamily="Gotham" Margin="6,5,0,0" Background="#FFB6AFAF"/>
+            <Button x:Name="buttonEraseAll" Content="Erase&#x0a; ALL" Height="116" VerticalAlignment="Top" Width="113" FontSize="32" FontFamily="Gotham" Margin="6,5,0,0" Background="#FFB6AFAF" Click="EraseAllButtonClicked"/>
         </Border>
         <Border BorderBrush="LightGray" BorderThickness="3" Height="130" Background="#FFB6AFAF" Width="130" CornerRadius="15" Margin="1752,941,28,5">
             <Button x:Name="buttonExit" Content="Exit" Height="116" VerticalAlignment="Top" Width="113" FontSize="32" FontFamily="Gotham" Margin="6,5,0,0" Background="#FFB6AFAF" Click="ExitButtonClicked"/>
