@@ -116,7 +116,7 @@ void MentorSystemUWP::MainPage::iconPanelImageTapped(Platform::Object^ sender, W
 {
 	auto selectedImage = dynamic_cast<Image^>(sender);
 	auto selectedSource = dynamic_cast<BitmapImage^>(selectedImage->Source);
-	Uri^ selectedUri = selectedSource->UriSource; 
+	Uri^ selectedUri = selectedSource->UriSource;
 
 	myController->setIconAnnotationSelectedFlag(1);
 	myController->setSelectedIconPath(selectedUri->AbsoluteUri);
@@ -143,7 +143,7 @@ void MentorSystemUWP::MainPage::CreateIconAnnotation(Windows::UI::Xaml::Input::T
 	BitmapImage^ iconBitmap = ref new BitmapImage(iconUri);
 	Image^ iconImage = ref new Image();
 	iconImage->Source = iconBitmap;
-
+	
 	// Annotation dimension and position
 	Point tappedPosition = e->GetPosition(imagesPanel);
 	iconImage->Width = 150; iconImage->Height = 150;
@@ -212,16 +212,25 @@ void MentorSystemUWP::MainPage::IconImage_ManipulationCompleted(Platform::Object
 	{
 		auto selectedElement = dynamic_cast<Image^>(sender);
 		selectedElement->Opacity = 1;
+
+		if (TrashBinOpenImage->Opacity == 1)
+		{
+			unsigned int idx;
+			imagesPanel->Children->IndexOf(selectedElement, &idx);
+			imagesPanel->Children->RemoveAt(idx);
+		}
 	}
 	else
 	{
 		auto selectedElement = dynamic_cast<Polyline^>(sender);
 		selectedElement->Opacity = 1;
-	}
 
-	if (buttonErase->IsPointerOver)
-	{
-		greetingOutput->Text = "Trashing";
+		if (TrashBinOpenImage->Opacity == 1)
+		{
+			unsigned int idx;
+			drawingPanel->Children->IndexOf(selectedElement, &idx);
+			drawingPanel->Children->RemoveAt(idx);
+		}
 	}
 }
 
@@ -282,9 +291,22 @@ void MentorSystemUWP::MainPage::LineStopped(Platform::Object^ sender, Windows::U
 {
 	if (buttonLines->IsChecked->Value)
 	{
-		greetingOutput->Text = "Stop Drawing";
 		drawingPanel->Children->Append(LineAnnotation);
 
 		ResetLineAnnotation();
 	}
+}
+
+
+void MentorSystemUWP::MainPage::PointerOverTrashBin(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e)
+{
+	TrashBinOpenImage->Opacity = 1;
+	TrashBinClosedImage->Opacity = 0;
+}
+
+
+void MentorSystemUWP::MainPage::PointerLeftTrashBin(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e)
+{
+	TrashBinOpenImage->Opacity = 0;
+	TrashBinClosedImage->Opacity = 1;
 }

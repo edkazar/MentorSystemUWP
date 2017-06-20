@@ -40,5 +40,7 @@ namespace MentorSystemUWP
 		void PointsButtonUnchecked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void LineDrawing(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e);
 		void LineStopped(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e);
+		void PointerOverTrashBin(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e);
+		void PointerLeftTrashBin(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e);
 	};
 }

@@ -185,6 +185,8 @@
     <Image Include="Assets\text_palpation_shadow.png" />
     <Image Include="Assets\text_remove_shadow.png" />
     <Image Include="Assets\text_stitch_shadow.png" />
+    <Image Include="Assets\trash_bin_closed.png" />
+    <Image Include="Assets\trash_bin_open.png" />
     <Image Include="Assets\tweezers_shadow.png" />
     <Image Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>

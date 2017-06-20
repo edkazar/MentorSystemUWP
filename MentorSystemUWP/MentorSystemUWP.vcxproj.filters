@@ -116,6 +116,12 @@
     <Image Include="Assets\operating_room.jpg">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="Assets\trash_bin_closed.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\trash_bin_open.png">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />

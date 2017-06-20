@@ -65,11 +65,12 @@ namespace MentorSystemUWP
         private: ::Windows::UI::Xaml::Controls::StackPanel^ contentPanel;
         private: ::Windows::UI::Xaml::Controls::Canvas^ drawingPanel;
         private: ::Windows::UI::Xaml::Controls::Pivot^ PivotPanel;
+        private: ::Windows::UI::Xaml::Controls::Image^ TrashBinOpenImage;
+        private: ::Windows::UI::Xaml::Controls::Image^ TrashBinClosedImage;
         private: ::Windows::UI::Xaml::Controls::Border^ buttonLinesBorder;
         private: ::Windows::UI::Xaml::Controls::Border^ buttonPointsBorder;
         private: ::Windows::UI::Xaml::Controls::Button^ buttonExit;
         private: ::Windows::UI::Xaml::Controls::Button^ buttonEraseAll;
-        private: ::Windows::UI::Xaml::Controls::Button^ buttonErase;
         private: ::Windows::UI::Xaml::Controls::Primitives::ToggleButton^ buttonPoints;
         private: ::Windows::UI::Xaml::Controls::Primitives::ToggleButton^ buttonLines;
         private: ::Windows::UI::Xaml::Controls::GridView^ TextsPanel;
