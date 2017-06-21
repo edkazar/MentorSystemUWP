@@ -1,0 +1,2 @@
+MainPackage=C:\Users\M2M ADMIN\documents\visual studio 2017\Projects\MentorSystemUWP\Debug\MentorSystemUWP\MentorSystemUWP_1.0.2.0_Win32_Debug.appx
+SymbolPackage=C:\Users\M2M ADMIN\documents\visual studio 2017\Projects\MentorSystemUWP\AppPackages\MentorSystemUWP\MentorSystemUWP_1.0.2.0_Debug_Test\MentorSystemUWP_1.0.2.0_Win32_Debug.appxsym

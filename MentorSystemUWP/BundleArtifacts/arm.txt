@@ -1,0 +1,6 @@
+MainPackage=C:\Users\M2M ADMIN\documents\visual studio 2017\Projects\MentorSystemUWP\ARM\Debug\MentorSystemUWP\MentorSystemUWP_1.0.2.0_ARM_Debug.appx
+SymbolPackage=C:\Users\M2M ADMIN\documents\visual studio 2017\Projects\MentorSystemUWP\AppPackages\MentorSystemUWP\MentorSystemUWP_1.0.2.0_Debug_Test\MentorSystemUWP_1.0.2.0_ARM_Debug.appxsym
+ResourcePack=C:\Users\M2M ADMIN\documents\visual studio 2017\Projects\MentorSystemUWP\ARM\Debug\MentorSystemUWP\MentorSystemUWP_1.0.2.0_scale-100.appx
+ResourcePack=C:\Users\M2M ADMIN\documents\visual studio 2017\Projects\MentorSystemUWP\ARM\Debug\MentorSystemUWP\MentorSystemUWP_1.0.2.0_scale-125.appx
+ResourcePack=C:\Users\M2M ADMIN\documents\visual studio 2017\Projects\MentorSystemUWP\ARM\Debug\MentorSystemUWP\MentorSystemUWP_1.0.2.0_scale-150.appx
+ResourcePack=C:\Users\M2M ADMIN\documents\visual studio 2017\Projects\MentorSystemUWP\ARM\Debug\MentorSystemUWP\MentorSystemUWP_1.0.2.0_scale-400.appx
