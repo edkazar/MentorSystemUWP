@@ -5,6 +5,8 @@
     xmlns:local="using:MentorSystemUWP"
     RequestedTheme="Light">
 
+    
+    
     <Application.Resources>
         <DataTemplate x:Key="GothamHeader">
             <ContentPresenter>
