@@ -113,7 +113,7 @@ void MentorSystemUWP::MainPage::EnteringRectangle(Platform::Object^ sender, Wind
 }
 
 void MentorSystemUWP::MainPage::iconPanelImageTapped(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e)
-{
+{	
 	auto selectedImage = dynamic_cast<Image^>(sender);
 	auto selectedSource = dynamic_cast<BitmapImage^>(selectedImage->Source);
 	Uri^ selectedUri = selectedSource->UriSource;
@@ -122,6 +122,33 @@ void MentorSystemUWP::MainPage::iconPanelImageTapped(Platform::Object^ sender, W
 	myController->setSelectedIconPath(selectedUri->AbsoluteUri);
 }
 
+void MentorSystemUWP::MainPage::PreparePointAnnotation(Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e)
+{
+	float initial_point_distance = 5.0f;
+	float angle;
+	float val = PI / 180.0f;
+
+	int counter;
+
+	//create enough points to make a round shape
+	for (counter = 0; counter <= 360; counter = counter + 18)
+	{
+		//gets the new angle value
+		angle = counter*val;
+
+		//Calculates trigonometric values of the point
+		float cosComponent = cos(angle)*initial_point_distance;
+		float senComponent = sin(angle)*initial_point_distance;
+
+		//Calculates the new point
+		float transfX = ((cosComponent)-(senComponent));
+		float transfY = ((senComponent)+(cosComponent));
+
+		//assigns the results
+		LineAnnotation->Points->Append(Windows::Foundation::Point((transfX)+(e->GetPosition(imagesPanel).X), (transfY)+(e->GetPosition(imagesPanel).Y)));
+
+	}
+}
 
 void MentorSystemUWP::MainPage::imagesPanelTapped(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e)
 {
@@ -133,6 +160,14 @@ void MentorSystemUWP::MainPage::imagesPanelTapped(Platform::Object^ sender, Wind
 
 		myController->setIconAnnotationSelectedFlag(0);
 		myController->setSelectedIconPath(ref new String());
+	}
+	else if (buttonPoints->IsChecked->Value)
+	{
+		PreparePointAnnotation(e);
+
+		drawingPanel->Children->Append(LineAnnotation);
+
+		ResetLineAnnotation();
 	}
 }
 

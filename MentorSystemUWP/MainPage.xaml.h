@@ -32,6 +32,7 @@ namespace MentorSystemUWP
 		void CreateButtonsColor();
 		void CreateIconAnnotation(Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e);
 		void ResetLineAnnotation();
+		void PreparePointAnnotation(Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e);
 
 		void EraseAllButtonClicked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void LinesButtonChecked(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
